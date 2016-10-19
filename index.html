@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<style>
+		html,body{
+			height: 100%;
+			width: 100%;
+		}
+			#wrap{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			.text_img{
+				
+				width: 90%;
+				display: block;
+				margin: 20px auto;
+				position: relative;
+				z-index: 10;
+			}
+			.day,.night{
+				width: 100%;
+				height: 100%;
+				background-image: url( img/bg1.jpg);
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+			}
+			.night{
+				background-image: url( img/bg1.2.jpg) ;
+			}
+			
+			.day .sun,.night .moon{
+				width: 15%;
+				left: 50%;
+				margin-left: -7.5%;
+				top: 35%;
+				position: absolute;
+				-webkit-transform-origin: center 570%;
+				
+			}
+			
+			
+			
+			
+			
+			
+			
+			.fangzi{
+				width: 90%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -45%;
+			}
+			
+			
+			.sun{
+				-webkit-animation: sunRotate 10s linear infinite;
+			}
+			.moon{
+				-webkit-animation: moonRotate 10s linear infinite;
+			}
+			.day{
+				opacity: 1;
+				-webkit-animation: dayShow 10s linear infinite;
+			}
+			.night{
+				opacity: 0;
+				-webkit-animation: nightShow 10s linear infinite;
+			}
+			/**
+			 * 太阳的动画
+			 */
+			@-webkit-keyframes sunRotate{
+				0%{
+					-webkit-transform: rotate(-50deg);
+				}
+				50%{
+					-webkit-transform: rotate(50deg);
+				}
+				100%{
+					-webkit-transform: rotate(50deg);
+				}
+			}
+			
+			@-webkit-keyframes moonRotate{
+				0%{
+					-webkit-transform: rotate(-50deg);
+				}
+				50%{
+					-webkit-transform: rotate(-50deg);
+				}
+				100%{
+					-webkit-transform: rotate(50deg);
+				}
+
+			}
+			
+			@-webkit-keyframes dayShow{
+				0%{
+					opacity: 1;
+				}
+				45%{
+					opacity: 1;
+				}
+				50%{
+					opacity: 0;
+				}
+				95%{
+					opacity: 0;
+				}
+				100%{
+					opacity: 1;
+				}
+			}
+			@-webkit-keyframes nightShow{
+				0%{
+					opacity: 0;
+				}
+				45%{
+					opacity: 0;
+				}
+				50%{
+					opacity: 1;
+				}
+				95%{
+					opacity: 1;
+				}
+				100%{
+					opacity: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<img class="text_img"  src="img/txt2.png" />
+			<div class="day">
+				<img src="img/sun.png" class="sun" />
+				<div class="">
+				</div>
+				<img src="img/island1.png" class="fangzi" />
+				
+			</div>
+			<div class="night">
+				<img src="img/moon.png" class="moon" />
+				<div class="">
+				</div>
+				<img src="img/island2.png" class="fangzi" />
+				
+			</div>
+		</div>
+	</body>
+</html>
